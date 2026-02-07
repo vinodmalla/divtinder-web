@@ -8,6 +8,7 @@ import { addUser } from '../utils/userSlice.js';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { BASE_URL } from '../utils/Connection.js';
 
 
 
@@ -17,9 +18,9 @@ const Body = () => {
   const user=useSelector((store)=>store.user);
   
   const fetchUser=async()=>{
-    if(!user) return ;
+    if(!user) return navigate('/login') ;
   try{
-    const res=await axios.get("http://localhost:7777/profile/view",{
+    const res=await axios.get(BASE_URL+"/profile/view",{
       withCredentials:true
     })
     dispatch(addUser(res.data));

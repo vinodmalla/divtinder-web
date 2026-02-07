@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../utils/Connection'
 
 
 const NavBar = () => {
@@ -13,7 +14,7 @@ const NavBar = () => {
   const navigate=useNavigate();
   const handleLogout=async()=>{
     try{
-      await axios.post("http://localhost:7777/logout",{},{withCredentials:true});
+      await axios.post(BASE_URL+"/logout",{},{withCredentials:true});
       dispatch(removeUser());
       console.log("after logout redux user should be null");
       navigate('/login');

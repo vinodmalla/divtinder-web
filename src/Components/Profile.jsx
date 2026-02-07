@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BASE_URL } from '../utils/Connection';
 
 const Profile = () => {
 
@@ -40,7 +41,7 @@ const Profile = () => {
       setError("");
 
       const res = await axios.patch(
-        "http://localhost:7777/profile/update",
+        BASE_URL+"/profile/update",
         {
           firstName,
           lastName,

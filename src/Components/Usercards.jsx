@@ -3,13 +3,14 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { removeFeed } from '../utils/FeedSlice'
 import { useSwipeable } from 'react-swipeable'
+import { BASE_URL } from '../utils/Connection'
 
 const Usercards = (data) => {
   const dispatch=useDispatch()
   
   const reviewFeed=async(status,_id)=>{
     try{
-      const res=await axios.post("http://localhost:7777/request/"+status+"/"+_id,{},{withCredentials:true})
+      const res=await axios.post(BASE_URL+"/request/"+status+"/"+_id,{},{withCredentials:true})
       dispatch(removeFeed(_id))
     }catch(err){
       console.log(err)

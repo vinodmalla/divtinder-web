@@ -27,7 +27,7 @@ const Connections = () => {
             connections.map((connection)=>{
                 const {firstName,lastName,age,gender,about,photourl}=connection;
                 return(
-                    <div className="card bg-base-300 w-96 mt-12 mb-5 my-2 shadow-sm">
+                    <div key={firstName} className="card bg-base-300 w-96 mt-12 mb-5 my-2 shadow-sm">
   <figure className="px-10 pt-10">
     <img
       src={photourl}
@@ -36,7 +36,7 @@ const Connections = () => {
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{firstName} {lastName}</h2>
-    <p>{ gender &&age && gender.charAt(0).toUpperCase() + gender.slice(1) + ","+age}</p>
+    <p>{ gender &&age &&     gender.charAt(0).toUpperCase() + gender.slice(1) + ","+age}</p>
     <p> {about}</p>
  
   </div>
