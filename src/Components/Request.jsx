@@ -33,7 +33,7 @@ const Request = () => {
     },[]);
     
     if(!requests) return;
-    if(requests.length===0) return <h1>Request not found</h1>
+    if(requests.length===0) return <h1 className='flex justify-center mt-10 mb-10'>Request not found</h1>
     
   return (
     <div className=' flex flex-col justify-between items-center mt-4'>

@@ -22,7 +22,7 @@ const Login = () => {
     }
     catch(err){
         console.log(err);
-        setloginErr(err.message)
+        setloginErr(err.response?.data?.message || "Login failed")
     }
     }
     const handleSignup=async()=>{
@@ -32,7 +32,8 @@ const Login = () => {
         navigate("/profile")
       }
       catch(err){
-        signErr(err.message)
+         setsignErr(err.response?.data?.message || "Signup failed")
+
       }
     }
   return (

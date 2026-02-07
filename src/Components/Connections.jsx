@@ -21,7 +21,7 @@ const Connections = () => {
     if(!connections) return;
     if(connections.length==0) return <h1>Connections Not Found</h1>
   return (
-    <div className=' flex justify-center'>
+    <div className=' flex flex-col items-center '>
         <h1 className='font-extrabold text-2xl '>Connections</h1>
         {
             connections.map((connection)=>{
@@ -36,7 +36,7 @@ const Connections = () => {
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{firstName} {lastName}</h2>
-    <p>{age && gender && gender + ","+age}</p>
+    <p>{ gender &&age && gender.charAt(0).toUpperCase() + gender.slice(1) + ","+age}</p>
     <p> {about}</p>
  
   </div>

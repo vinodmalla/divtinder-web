@@ -15,6 +15,7 @@ const NavBar = () => {
     try{
       await axios.post("http://localhost:7777/logout",{},{withCredentials:true});
       dispatch(removeUser());
+      console.log("after logout redux user should be null");
       navigate('/login');
     }
     catch(err){
@@ -29,21 +30,22 @@ const NavBar = () => {
   </div>
         
  { user && <div className="flex gap-2">
-   
-    <div className="dropdown dropdown-end mx-12">
+   <p className='items-center my-auto text-gray-300'>Welcome,{user.firstName}</p>
+    <div className="dropdown dropdown-end mx-10">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-
+        
         <div className="w-10 rounded-full">
           <img
             alt={user.firstName}
             src={user.photourl} />
         </div>
       </div>
-
+    
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li>
+            
           <Link to="/profile" className="justify-between">
             Profile
             <span className="badge">New</span>
