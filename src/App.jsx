@@ -8,6 +8,9 @@ import appStore from "./utils/appstore.js";
 import Feed from "./Components/Feed.jsx";
 import Connections from "./Components/Connections.jsx";
 import Request from "./Components/Request.jsx";
+import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
+import TermsAndConditions from "./Components/TermsAndConditions.jsx";
+import RefundPolicy from "./Components/RefundPolicy.jsx";
 
 function App() {
   return (
@@ -21,7 +24,13 @@ function App() {
       <Route path="/profile" element={<Profile/>} />
       <Route path="/connections" element={<Connections/>} />
       <Route path="/request" element={<Request/>} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
+      <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+      <Route path="/RefundPolicy" element={<RefundPolicy />} />
+      
      </Route>
+   
+     
   
     </Routes>
     </BrowserRouter>
