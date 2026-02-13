@@ -11,6 +11,7 @@ import Request from "./Components/Request.jsx";
 import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
 import TermsAndConditions from "./Components/TermsAndConditions.jsx";
 import RefundPolicy from "./Components/RefundPolicy.jsx";
+import Premium from "./Components/Premium.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/request" element={<Request/>} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
       <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+      <Route path="/premium" element={<Premium />} />
       <Route path="/RefundPolicy" element={<RefundPolicy />} />
       
      </Route>
